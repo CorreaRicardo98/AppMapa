@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LoL-ZS-lHf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Buscador-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appMapaSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Buscar..." translatesAutoresizingMaskIntoConstraints="NO" id="7pV-9Y-R4s">
+                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hzk-Xe-Upl">
+                                <rect key="frame" x="0.0" y="206" width="414" height="690"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Hzk-Xe-Upl" secondAttribute="bottom" id="7SE-JW-z8h"/>
+                            <constraint firstItem="7pV-9Y-R4s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CJ7-OH-tqW"/>
+                            <constraint firstItem="7pV-9Y-R4s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ORq-E9-tbz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hzk-Xe-Upl" secondAttribute="trailing" id="ShU-JJ-dSn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7pV-9Y-R4s" secondAttribute="trailing" id="WJ7-xh-tjY"/>
+                            <constraint firstItem="Hzk-Xe-Upl" firstAttribute="top" secondItem="7pV-9Y-R4s" secondAttribute="bottom" constant="10" id="a3X-qo-hcS"/>
+                            <constraint firstItem="Hzk-Xe-Upl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cdv-6o-Cy0"/>
+                            <constraint firstItem="Hzk-Xe-Upl" firstAttribute="top" secondItem="7pV-9Y-R4s" secondAttribute="bottom" constant="10" id="rwg-me-hFh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Buscador" id="wTj-0n-SkW">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="location" catalog="system" id="cTe-z2-U1i">
+                            <connections>
+                                <action selector="ubicacion:" destination="BYZ-38-t0r" id="vkh-YL-9uH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buscador" destination="7pV-9Y-R4s" id="TLC-hY-EZ6"/>
+                        <outlet property="mapaMK" destination="Hzk-Xe-Upl" id="SkC-P6-Bfp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="103.79464285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="elC-ZY-faf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LoL-ZS-lHf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="RVB-CV-KiU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="i0C-XQ-x52"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZK4-kl-a2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
